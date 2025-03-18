@@ -37,6 +37,7 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "should destroy Product" do
+    skip("https://github.com/rails/tailwindcss-rails/issues/519")
     visit product_url(@product)
     click_on "Destroy this product", match: :first
 
