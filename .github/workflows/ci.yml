@@ -122,6 +122,8 @@ jobs:
           BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
 
         run: |
-          git mv -f .kamal/secrets.ci .kamal/secrets --author="CI <>"
-          git commit -m "override secrets for CI purposes" --author="CI <>"
+          git config --global user.email ""
+          git config --global user.name "CI"
+          git mv --force .kamal/secrets.ci .kamal/secrets
+          git commit --message "override secrets for CI purposes"
           bin/kamal deploy
