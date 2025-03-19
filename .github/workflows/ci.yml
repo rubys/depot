@@ -115,4 +115,6 @@ jobs:
         env:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           KAMAL_REGISTRY_PASSWORD: ${{ secrets.KAMAL_REGISTRY_PASSWORD }}
-        run: bin/kamal deploy --destination=ci
+        run: |
+          mv .kamal/secrets.ci .kamal/secrets
+          bin/kamal deploy
