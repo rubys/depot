@@ -115,6 +115,12 @@ jobs:
         env:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           KAMAL_REGISTRY_PASSWORD: ${{ secrets.KAMAL_REGISTRY_PASSWORD }}
+          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+          SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+          ENDPOINT_URL: ${{ secrets.ENDPOINT_URL }}
+          REGION: ${{ secrets.REGION }}
+          BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
+
         run: |
           mv .kamal/secrets.ci .kamal/secrets
           bin/kamal deploy
