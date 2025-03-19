@@ -123,5 +123,5 @@ jobs:
 
         run: |
           git mv --force .kamal/secrets.ci .kamal/secrets
-          git commit -m "override secrets for CI purposes"
+          git commit -m "override secrets for CI purposes" --author="CI <>"
           bin/kamal deploy
